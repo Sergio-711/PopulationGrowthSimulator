@@ -5,7 +5,7 @@ import math
 import matplotlib.pyplot as plt
 
 
-class ParametersWindow(tk.Toplevel):
+class ParametrosVentana(tk.Toplevel):
     """
     Ventana para configurar los parámetros de la simulación.
     """
@@ -32,107 +32,107 @@ class ParametersWindow(tk.Toplevel):
         self.geometry("330x400")
 
         # Subdivisión de nacimientos
-        lbl_births = ttk.Label(self, text="Nacimientos:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
-        lbl_births.grid(row=0, column=0, padx=5, pady=5, sticky="w")
+        lbl_nacimientos = ttk.Label(self, text="Nacimientos:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
+        lbl_nacimientos.grid(row=0, column=0, padx=5, pady=5, sticky="w")
 
-        lbl_surprise = ttk.Label(self, text="Embarazos sorpresa:")
-        lbl_surprise.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        lbl_sorpresa = ttk.Label(self, text="Embarazos sorpresa:")
+        lbl_sorpresa.grid(row=1, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_surprise = ttk.Entry(self, style='Custom.TEntry')
-        self.txt_surprise.insert(tk.END, "20 * sp.sqrt(tiempo)")
-        self.txt_surprise.grid(row=1, column=1, padx=5, pady=5)
+        self.txt_sorpresa = ttk.Entry(self, style='Custom.TEntry')
+        self.txt_sorpresa.insert(tk.END, "20 * sp.sqrt(tiempo)")
+        self.txt_sorpresa.grid(row=1, column=1, padx=5, pady=5)
 
-        lbl_planned = ttk.Label(self, text="Embarazos planeados:")
-        lbl_planned.grid(row=2, column=0, padx=5, pady=5, sticky="w")
+        lbl_planeados = ttk.Label(self, text="Embarazos planeados:")
+        lbl_planeados.grid(row=2, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_planned = ttk.Entry(self)
-        self.txt_planned.insert(tk.END, "20 * tiempo**3")
-        self.txt_planned.grid(row=2, column=1, padx=5, pady=5)
+        self.txt_planeados = ttk.Entry(self)
+        self.txt_planeados.insert(tk.END, "20 * tiempo**3")
+        self.txt_planeados.grid(row=2, column=1, padx=5, pady=5)
 
         # Subdivisión de muertes
-        lbl_deaths = ttk.Label(self, text="Muertes:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
-        lbl_deaths.grid(row=3, column=0, padx=5, pady=5, sticky="w")
+        lbl_muertes = ttk.Label(self, text="Muertes:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
+        lbl_muertes.grid(row=3, column=0, padx=5, pady=5, sticky="w")
 
-        lbl_accident = ttk.Label(self, text="Muerte por accidente:")
-        lbl_accident.grid(row=4, column=0, padx=5, pady=5, sticky="w")
+        lbl_accidente = ttk.Label(self, text="Muerte por accidente:")
+        lbl_accidente.grid(row=4, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_accident = ttk.Entry(self)
-        self.txt_accident.insert(tk.END, "20 * tiempo")
-        self.txt_accident.grid(row=4, column=1, padx=5, pady=5)
+        self.txt_accidente = ttk.Entry(self)
+        self.txt_accidente.insert(tk.END, "20 * tiempo")
+        self.txt_accidente.grid(row=4, column=1, padx=5, pady=5)
 
-        lbl_disease = ttk.Label(self, text="Muerte por enfermedad:")
-        lbl_disease.grid(row=5, column=0, padx=5, pady=5, sticky="w")
+        lbl_enfermedad = ttk.Label(self, text="Muerte por enfermedad:")
+        lbl_enfermedad.grid(row=5, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_disease = ttk.Entry(self)
-        self.txt_disease.insert(tk.END, "10 * tiempo**3")
-        self.txt_disease.grid(row=5, column=1, padx=5, pady=5)
+        self.txt_enfermedad = ttk.Entry(self)
+        self.txt_enfermedad.insert(tk.END, "10 * tiempo**3")
+        self.txt_enfermedad.grid(row=5, column=1, padx=5, pady=5)
 
-        lbl_theft = ttk.Label(self, text="Muerte por robo:")
-        lbl_theft.grid(row=6, column=0, padx=5, pady=5, sticky="w")
+        lbl_robo = ttk.Label(self, text="Muerte por robo:")
+        lbl_robo.grid(row=6, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_theft = ttk.Entry(self)
-        self.txt_theft.insert(tk.END, "50 * tiempo")
-        self.txt_theft.grid(row=6, column=1, padx=5, pady=5)
+        self.txt_robo = ttk.Entry(self)
+        self.txt_robo.insert(tk.END, "50 * tiempo")
+        self.txt_robo.grid(row=6, column=1, padx=5, pady=5)
 
         # Subdivisión de inmigrantes
-        lbl_immigrants = ttk.Label(self, text="Inmigrantes:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
-        lbl_immigrants.grid(row=7, column=0, padx=5, pady=5, sticky="w")
+        lbl_inmigrantes = ttk.Label(self, text="Inmigrantes:", font=("Arial", 12, "bold"), background="lightgray", foreground="black")
+        lbl_inmigrantes.grid(row=7, column=0, padx=5, pady=5, sticky="w")
 
-        lbl_xenophobia = ttk.Label(self, text="Xenofobia:")
-        lbl_xenophobia.grid(row=8, column=0, padx=5, pady=5, sticky="w")
+        lbl_xenofobia = ttk.Label(self, text="Xenofobia:")
+        lbl_xenofobia.grid(row=8, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_xenophobia = ttk.Entry(self)
-        self.txt_xenophobia.insert(tk.END, "(15 * tiempo) / sp.sqrt(tiempo)")
-        self.txt_xenophobia.grid(row=8, column=1, padx=5, pady=5)
+        self.txt_xenofobia = ttk.Entry(self)
+        self.txt_xenofobia.insert(tk.END, "(15 * tiempo) / sp.sqrt(tiempo)")
+        self.txt_xenofobia.grid(row=8, column=1, padx=5, pady=5)
 
-        lbl_asylum = ttk.Label(self, text="Asilo:")
-        lbl_asylum.grid(row=9, column=0, padx=5, pady=5, sticky="w")
+        lbl_asilo = ttk.Label(self, text="Asilo:")
+        lbl_asilo.grid(row=9, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_asylum = ttk.Entry(self)
-        self.txt_asylum.insert(tk.END, "tiempo")
-        self.txt_asylum.grid(row=9, column=1, padx=5, pady=5)
+        self.txt_asilo = ttk.Entry(self)
+        self.txt_asilo.insert(tk.END, "tiempo")
+        self.txt_asilo.grid(row=9, column=1, padx=5, pady=5)
 
-        lbl_job_opportunity = ttk.Label(self, text="Oportunidad laboral:")
-        lbl_job_opportunity.grid(row=10, column=0, padx=5, pady=5, sticky="w")
+        lbl_laboral = ttk.Label(self, text="Oportunidad laboral:")
+        lbl_laboral.grid(row=10, column=0, padx=5, pady=5, sticky="w")
 
-        self.txt_job_opportunity = ttk.Entry(self)
-        self.txt_job_opportunity.insert(tk.END, "18 * tiempo")
-        self.txt_job_opportunity.grid(row=10, column=1, padx=5, pady=5)
+        self.txt_laboral = ttk.Entry(self)
+        self.txt_laboral.insert(tk.END, "18 * tiempo")
+        self.txt_laboral.grid(row=10, column=1, padx=5, pady=5)
 
-        btn_accept = ttk.Button(self, text="Aceptar", command=self.accept)
-        btn_accept.grid(row=12, columnspan=2, padx=5, pady=5)
+        btn_aceptar = ttk.Button(self, text="Aceptar", command=self.aceptar)
+        btn_aceptar.grid(row=12, columnspan=2, padx=5, pady=5)
 
-    def aceept(self):
+    def aceptar(self):
         """
         Guarda los parámetros ingresados y cierra la ventana.
         """
-        births = {
-            'sorpresa': self.txt_surprise.get(),
-            'planeados': self.txt_planned.get()
+        nacimientos = {
+            'sorpresa': self.txt_sorpresa.get(),
+            'planeados': self.txt_planeados.get()
         }
 
-        deaths = {
+        muertes = {
             'accidente': self.txt_accidente.get(),
-            'enfermedad': self.txt_disease.get(),
-            'robo': self.txt_theft.get()
+            'enfermedad': self.txt_enfermedad.get(),
+            'robo': self.txt_robo.get()
         }
 
-        inmigrants = {
-            'xenofobia': self.txt_xenophobia.get(),
-            'asilo': self.txt_asylum.get(),
-            'laboral': self.txt_job_opportunity.get()
+        inmigrantes = {
+            'xenofobia': self.txt_xenofobia.get(),
+            'asilo': self.txt_asilo.get(),
+            'laboral': self.txt_laboral.get()
         }
-        print(births)
-        print(deaths)
-        print(inmigrants)
+        print(nacimientos)
+        print(muertes)
+        print(inmigrantes)
 
-        self.parent.update_parameters(births, deaths, inmigrants)
+        self.parent.actualizar_parametros(nacimientos, muertes, inmigrantes)
         self.destroy()
 
 
 
 
-class Simulation(tk.Tk):
+class Simulacion(tk.Tk):
     """
     La ventana principal de la aplicación de simulación de población.
     """
@@ -152,32 +152,32 @@ class Simulation(tk.Tk):
         """
         Crea los widgets de la ventana principal.
         """
-        lbl_population = ttk.Label(self, text="Población inicial:")
-        lbl_population.grid(row=0, column=0, padx=5, pady=5)
+        lbl_poblacion = ttk.Label(self, text="Población inicial:")
+        lbl_poblacion.grid(row=0, column=0, padx=5, pady=5)
 
-        self.txt_population = ttk.Entry(self)
-        self.txt_population.grid(row=0, column=1, padx=5, pady=5)
+        self.txt_poblacion = ttk.Entry(self)
+        self.txt_poblacion.grid(row=0, column=1, padx=5, pady=5)
 
-        lbl_duration = ttk.Label(self, text="Duración de la simulación (años):")
-        lbl_duration.grid(row=1, column=0, padx=5, pady=5)
+        lbl_duracion = ttk.Label(self, text="Duración de la simulación (años):")
+        lbl_duracion.grid(row=1, column=0, padx=5, pady=5)
 
-        self.txt_duration = ttk.Entry(self)
-        self.txt_duration.grid(row=1, column=1, padx=5, pady=5)
+        self.txt_duracion = ttk.Entry(self)
+        self.txt_duracion.grid(row=1, column=1, padx=5, pady=5)
 
-        btn_parameters = ttk.Button(self, text="Configurar Parámetros", command=self.configure_parameters)
-        btn_parameters.grid(row=2, columnspan=2, padx=5, pady=5)
+        btn_parametros = ttk.Button(self, text="Configurar Parámetros", command=self.configurar_parametros)
+        btn_parametros.grid(row=2, columnspan=2, padx=5, pady=5)
 
-        btn_simulate = ttk.Button(self, text="Simular", command=self.ejecutar_simulacion)
-        btn_simulate.grid(row=3, columnspan=2, padx=5, pady=5)
+        btn_simular = ttk.Button(self, text="Simular", command=self.ejecutar_simulacion)
+        btn_simular.grid(row=3, columnspan=2, padx=5, pady=5)
 
-    def configure_parameters(self):
+    def configurar_parametros(self):
         """
         Abre la ventana de configuración de parámetros.
         """
-        parameters_window = ParametersWindow(self)
-        parameters_window.grab_set()
+        parametros_window = ParametrosVentana(self)
+        parametros_window.grab_set()
 
-    def update_parameters(self, births, deaths, inmigrants):
+    def actualizar_parametros(self, nacimientos, muertes, inmigrantes):
         """
         Actualiza los parámetros de la simulación.
         
@@ -186,73 +186,73 @@ class Simulation(tk.Tk):
             muertes (dict): Parámetros relacionados con las muertes.
             inmigrantes (dict): Parámetros relacionados con los inmigrantes.
         """
-        self.births = births
-        self.deaths = deaths
-        self.inmigrants = inmigrants
+        self.nacimientos = nacimientos
+        self.muertes = muertes
+        self.inmigrantes = inmigrantes
 
-    def death_rate(self, tiempo, actual_population):
+    def tasa_muertes(self, tiempo, poblacion_actual):
         """
         Calcula la tasa de muertes en un momento dado.
 
         Args:
             tiempo (float): El tiempo en el que se calcula la tasa de muertes.
-            actual_population (int): La población actual en ese momento.
+            poblacion_actual (int): La población actual en ese momento.
 
         Returns:
             float: La tasa total de muertes en el tiempo especificado.
         """
-        death_by_accidents = eval(self.deaths['accidente'], {'tiempo': tiempo, 'poblacion': actual_population}, {'sp': sp})
-        death_by_diseases = eval(self.deaths['enfermedad'], {'tiempo': tiempo, 'poblacion': actual_population}, {'sp': sp})
-        death_by_theft = eval(self.deaths['robo'], {'tiempo': tiempo, 'poblacion': actual_population}, {'sp': sp})
-        total_deaths = death_by_accidents + death_by_diseases + death_by_theft
-        return total_deaths
+        muerte_por_accidentes = eval(self.muertes['accidente'], {'tiempo': tiempo, 'poblacion': poblacion_actual}, {'sp': sp})
+        muerte_por_enfermedades = eval(self.muertes['enfermedad'], {'tiempo': tiempo, 'poblacion': poblacion_actual}, {'sp': sp})
+        muerte_por_robo = eval(self.muertes['robo'], {'tiempo': tiempo, 'poblacion': poblacion_actual}, {'sp': sp})
+        total_muertes = muerte_por_accidentes + muerte_por_enfermedades + muerte_por_robo
+        return total_muertes
 
-    def integral_death_rate(self, start_time, end_time, poblacion):
+    def tasa_muertes_integral(self, tiempo_inicio, tiempo_fin, poblacion):
         """
         Calcula la tasa integral de muertes durante un período de tiempo.
 
         Args:
-            start_time (float): El inicio del período de tiempo.
-            end_time (float): El final del período de tiempo.
+            tiempo_inicio (float): El inicio del período de tiempo.
+            tiempo_fin (float): El final del período de tiempo.
             poblacion (int): La población durante el período de tiempo.
 
         Returns:
             int: La tasa integral de muertes durante el período de tiempo especificado.
         """
         tiempo = sp.symbols('tiempo')
-        integral = sp.integrate(self.death_rate(tiempo, poblacion), (tiempo, start_time, end_time))
+        integral = sp.integrate(self.tasa_muertes(tiempo, poblacion), (tiempo, tiempo_inicio, tiempo_fin))
         return math.ceil(integral.evalf() / poblacion)
 
-    def tasa_nacimientos(self, tiempo, actual_population):
+    def tasa_nacimientos(self, tiempo, poblacion_actual):
         """
         Calcula la tasa de nacimientos en un momento dado.
 
         Args:
             tiempo (float): El tiempo en el que se calcula la tasa de nacimientos.
-            actual_population (int): La población actual en ese momento.
+            poblacion_actual (int): La población actual en ese momento.
 
         Returns:
             float: La tasa total de nacimientos en el tiempo especificado.
         """
-        embarazos_sorpresa = eval(self.births['sorpresa'], {'tiempo': tiempo, 'poblacion': actual_population}, {'sp': sp})
-        embarazos_planeados = eval(self.births['planeados'], {'tiempo': tiempo, 'poblacion': actual_population}, {'sp': sp})
+        embarazos_sorpresa = eval(self.nacimientos['sorpresa'], {'tiempo': tiempo, 'poblacion': poblacion_actual}, {'sp': sp})
+        embarazos_planeados = eval(self.nacimientos['planeados'], {'tiempo': tiempo, 'poblacion': poblacion_actual}, {'sp': sp})
         total_nacimientos = embarazos_sorpresa + embarazos_planeados
         return total_nacimientos
 
-    def tasa_nacimientos_integral(self, start_time, end_time, poblacion):
+    def tasa_nacimientos_integral(self, tiempo_inicio, tiempo_fin, poblacion):
         """
         Calcula la tasa integral de nacimientos durante un período de tiempo.
 
         Args:
-            start_time (float): El inicio del período de tiempo.
-            end_time (float): El final del período de tiempo.
+            tiempo_inicio (float): El inicio del período de tiempo.
+            tiempo_fin (float): El final del período de tiempo.
             poblacion (int): La población durante el período de tiempo.
 
         Returns:
             int: La tasa integral de nacimientos durante el período de tiempo especificado.
         """
         tiempo = sp.symbols('tiempo')
-        integral = sp.integrate(self.tasa_nacimientos(tiempo, poblacion), (tiempo, start_time, end_time))
+        integral = sp.integrate(self.tasa_nacimientos(tiempo, poblacion), (tiempo, tiempo_inicio, tiempo_fin))
         return math.ceil(integral.evalf() / poblacion)
 
     def tasa_inmigrantes(self, tiempo):
@@ -265,37 +265,37 @@ class Simulation(tk.Tk):
         Returns:
             float: La tasa total de inmigrantes en el tiempo especificado.
         """
-        xenofobia = eval(self.inmigrants['xenofobia'])
-        asilo = eval(self.inmigrants['asilo'])
-        oportunidad_laboral = eval(self.inmigrants['laboral'])
+        xenofobia = eval(self.inmigrantes['xenofobia'])
+        asilo = eval(self.inmigrantes['asilo'])
+        oportunidad_laboral = eval(self.inmigrantes['laboral'])
         total_inmigrantes = asilo + oportunidad_laboral - xenofobia
         return total_inmigrantes
 
-    def tasa_inmigrantes_integral(self, start_time, end_time):
+    def tasa_inmigrantes_integral(self, tiempo_inicio, tiempo_fin):
         """
         Calcula la tasa integral de inmigrantes durante un período de tiempo.
 
         Args:
-            start_time (float): El inicio del período de tiempo.
-            end_time (float): El final del período de tiempo.
+            tiempo_inicio (float): El inicio del período de tiempo.
+            tiempo_fin (float): El final del período de tiempo.
 
         Returns:
             int: La tasa integral de inmigrantes durante el período de tiempo especificado.
         """
         tiempo = sp.symbols('tiempo')
-        integral = sp.integrate(self.tasa_inmigrantes(tiempo), (tiempo, start_time, end_time))
+        integral = sp.integrate(self.tasa_inmigrantes(tiempo), (tiempo, tiempo_inicio, tiempo_fin))
         return math.ceil(integral.evalf())
 
     def ejecutar_simulacion(self):
         """
         Ejecuta la simulación de población.
         """
-        poblacion_str = self.txt_population.get()
+        poblacion_str = self.txt_poblacion.get()
         if not poblacion_str or not poblacion_str.isdigit():
             # Mostrar un mensaje de error o tomar alguna otra acción apropiada si el campo está vacío
             messagebox.showerror("Error", "Por favor, ingrese un valor válido para la población inicial.")
             return
-        duracion_str = self.txt_duration.get()
+        duracion_str = self.txt_duracion.get()
         if not duracion_str or not duracion_str.isdigit():
             messagebox.showerror("Error", "Por favor, ingrese un valor válido para los años.")
             return
@@ -315,16 +315,16 @@ class Simulation(tk.Tk):
 
         poblacion = poblacion_inicial
         poblacionList = [poblacion_inicial]
-        deaths = []
-        births = []
-        inmigrants = []
+        muertes = []
+        nacimientos = []
+        inmigrantes = []
 
         for t in range(1, tiempo_simulacion + 1):
-            deaths.append(self.integral_death_rate(0, t, poblacion))
-            births.append(self.tasa_nacimientos_integral(0, t, poblacion))
-            inmigrants.append(self.tasa_inmigrantes_integral(0, t))
+            muertes.append(self.tasa_muertes_integral(0, t, poblacion))
+            nacimientos.append(self.tasa_nacimientos_integral(0, t, poblacion))
+            inmigrantes.append(self.tasa_inmigrantes_integral(0, t))
             print()
-            poblacion_final = births[-1] + inmigrants[-1] - deaths[-1]
+            poblacion_final = nacimientos[-1] + inmigrantes[-1] - muertes[-1]
             poblacion += poblacion_final
             if poblacion < 0:
                 messagebox.showerror("Error", "La población ha llegado a ser menor que cero. La simulación se detendrá. Ya no hay nada, ni nadie, soledad y desesperación, el fin del mundo :D. Lo han hecho mejor los humanos en mantenerse vivos, eso deja mucho que desear.")
@@ -332,17 +332,17 @@ class Simulation(tk.Tk):
             poblacionList.append(poblacion)
 
             axs[0, 0].plot(range(t + 1), poblacionList, color='blue')
-            axs[0, 1].plot(range(1, t + 1), deaths, color='red')
-            axs[1, 0].plot(range(1, t + 1), births, color='green')
-            axs[1, 1].plot(range(1, t + 1), inmigrants, color='orange')
+            axs[0, 1].plot(range(1, t + 1), muertes, color='red')
+            axs[1, 0].plot(range(1, t + 1), nacimientos, color='green')
+            axs[1, 1].plot(range(1, t + 1), inmigrantes, color='orange')
 
             plt.pause(0.5)
 
         plt.figure()
         plt.plot(range(tiempo_simulacion + 1), poblacionList, label='Población', color='blue')
-        plt.plot(range(1, tiempo_simulacion + 1), deaths, label='Muertes', color='red')
-        plt.plot(range(1, tiempo_simulacion + 1), births, label='Nacimientos', color='green')
-        plt.plot(range(1, tiempo_simulacion + 1), inmigrants, label='Inmigrantes', color='orange')
+        plt.plot(range(1, tiempo_simulacion + 1), muertes, label='Muertes', color='red')
+        plt.plot(range(1, tiempo_simulacion + 1), nacimientos, label='Nacimientos', color='green')
+        plt.plot(range(1, tiempo_simulacion + 1), inmigrantes, label='Inmigrantes', color='orange')
         plt.xlabel('Años')
         plt.ylabel('Cantidad')
         plt.title('Evolución de la población, muertes, nacimientos e inmigrantes')
@@ -353,5 +353,5 @@ class Simulation(tk.Tk):
 
 
 if __name__ == '__main__':
-    app = Simulation()
+    app = Simulacion()
     app.mainloop()
